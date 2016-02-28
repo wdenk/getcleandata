@@ -1,0 +1,96 @@
+Codebook for dataset created for the week four course Projekt of "Getting and Cleaning Data"
+===================================================================================================
+
+Excerpt of the description of original dataset from which this dataset is derived:
+
+==================================================================
+Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+==================================================================
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Università degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+==================================================================
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+
+For each record it is provided:
+======================================
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+Notes: 
+======
+- Features are normalized and bounded within [-1,1].
+- Each feature vector is a row on the text file.
+
+
+===================================================================================================
+
+This dataset contains following modifications to the original one:
+
+- Only measurements of mean and standartdeviation were selected. This reduced the inital 561 features to 85.
+- Furthermore every measurement is an aggregated version of the orgiginal measurements. Aggregation was done on the variables subjectid and activityname. Aggregationfunction used: mean
+- The dataset contains two identifyer: "activityname" and "subjectid"
+- activityname takes following values: WALKING, 
+WALKING_UPSTAIRS, 
+WALKING_DOWNSTAIRS, SITTING
+, STANDING, 
+LAYING
+
+- subjectid: Range from 1-30
+
+list of measurement vector names in the dataset:
+                               
+ [3] "Mean_of_tBodyAcc-mean()-Y"                    "Mean_of_tBodyAcc-mean()-Z"                   
+ [5] "Mean_of_tBodyAcc-std()-X"                     "Mean_of_tBodyAcc-std()-Y"                    
+ [7] "Mean_of_tBodyAcc-std()-Z"                     "Mean_of_tGravityAcc-mean()-X"                
+ [9] "Mean_of_tGravityAcc-mean()-Y"                 "Mean_of_tGravityAcc-mean()-Z"                
+[11] "Mean_of_tGravityAcc-std()-X"                  "Mean_of_tGravityAcc-std()-Y"                 
+[13] "Mean_of_tGravityAcc-std()-Z"                  "Mean_of_tBodyAccJerk-mean()-X"               
+[15] "Mean_of_tBodyAccJerk-mean()-Y"                "Mean_of_tBodyAccJerk-mean()-Z"               
+[17] "Mean_of_tBodyAccJerk-std()-X"                 "Mean_of_tBodyAccJerk-std()-Y"                
+[19] "Mean_of_tBodyAccJerk-std()-Z"                 "Mean_of_tBodyGyro-mean()-X"                  
+[21] "Mean_of_tBodyGyro-mean()-Y"                   "Mean_of_tBodyGyro-mean()-Z"                  
+[23] "Mean_of_tBodyGyro-std()-X"                    "Mean_of_tBodyGyro-std()-Y"                   
+[25] "Mean_of_tBodyGyro-std()-Z"                    "Mean_of_tBodyGyroJerk-mean()-X"              
+[27] "Mean_of_tBodyGyroJerk-mean()-Y"               "Mean_of_tBodyGyroJerk-mean()-Z"              
+[29] "Mean_of_tBodyGyroJerk-std()-X"                "Mean_of_tBodyGyroJerk-std()-Y"               
+[31] "Mean_of_tBodyGyroJerk-std()-Z"                "Mean_of_tBodyAccMag-mean()"                  
+[33] "Mean_of_tBodyAccMag-std()"                    "Mean_of_tGravityAccMag-mean()"               
+[35] "Mean_of_tGravityAccMag-std()"                 "Mean_of_tBodyAccJerkMag-mean()"              
+[37] "Mean_of_tBodyAccJerkMag-std()"                "Mean_of_tBodyGyroMag-mean()"                 
+[39] "Mean_of_tBodyGyroMag-std()"                   "Mean_of_tBodyGyroJerkMag-mean()"             
+[41] "Mean_of_tBodyGyroJerkMag-std()"               "Mean_of_fBodyAcc-mean()-X"                   
+[43] "Mean_of_fBodyAcc-mean()-Y"                    "Mean_of_fBodyAcc-mean()-Z"                   
+[45] "Mean_of_fBodyAcc-std()-X"                     "Mean_of_fBodyAcc-std()-Y"                    
+[47] "Mean_of_fBodyAcc-std()-Z"                     "Mean_of_fBodyAcc-meanFreq()-X"               
+[49] "Mean_of_fBodyAcc-meanFreq()-Y"                "Mean_of_fBodyAcc-meanFreq()-Z"               
+[51] "Mean_of_fBodyAccJerk-mean()-X"                "Mean_of_fBodyAccJerk-mean()-Y"               
+[53] "Mean_of_fBodyAccJerk-mean()-Z"                "Mean_of_fBodyAccJerk-std()-X"                
+[55] "Mean_of_fBodyAccJerk-std()-Y"                 "Mean_of_fBodyAccJerk-std()-Z"                
+[57] "Mean_of_fBodyAccJerk-meanFreq()-X"            "Mean_of_fBodyAccJerk-meanFreq()-Y"           
+[59] "Mean_of_fBodyAccJerk-meanFreq()-Z"            "Mean_of_fBodyGyro-mean()-X"                  
+[61] "Mean_of_fBodyGyro-mean()-Y"                   "Mean_of_fBodyGyro-mean()-Z"                  
+[63] "Mean_of_fBodyGyro-std()-X"                    "Mean_of_fBodyGyro-std()-Y"                   
+[65] "Mean_of_fBodyGyro-std()-Z"                    "Mean_of_fBodyGyro-meanFreq()-X"              
+[67] "Mean_of_fBodyGyro-meanFreq()-Y"               "Mean_of_fBodyGyro-meanFreq()-Z"              
+[69] "Mean_of_fBodyAccMag-mean()"                   "Mean_of_fBodyAccMag-std()"                   
+[71] "Mean_of_fBodyAccMag-meanFreq()"               "Mean_of_fBodyBodyAccJerkMag-mean()"          
+[73] "Mean_of_fBodyBodyAccJerkMag-std()"            "Mean_of_fBodyBodyAccJerkMag-meanFreq()"      
+[75] "Mean_of_fBodyBodyGyroMag-mean()"              "Mean_of_fBodyBodyGyroMag-std()"              
+[77] "Mean_of_fBodyBodyGyroMag-meanFreq()"          "Mean_of_fBodyBodyGyroJerkMag-mean()"         
+[79] "Mean_of_fBodyBodyGyroJerkMag-std()"           "Mean_of_fBodyBodyGyroJerkMag-meanFreq()"     
+[81] "Mean_of_angle(tBodyAccMean,gravity)"          "Mean_of_angle(tBodyAccJerkMean),gravityMean)"
+[83] "Mean_of_angle(tBodyGyroMean,gravityMean)"     "Mean_of_angle(tBodyGyroJerkMean,gravityMean)"
+[85] "Mean_of_angle(X,gravityMean)"                 "Mean_of_angle(Y,gravityMean)"                
+[87] "Mean_of_angle(Z,gravityMean)"  
